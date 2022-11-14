@@ -4,26 +4,36 @@ var app = new Vue({
     toDo: [
       {
         description: "comprare il parmigiano",
-        check: "false",
+        check: false,
       },
       {
         description: "comprare il musetto",
-        check: "false",
+        check: false,
       },
     ],
+    text: "",
   },
 
   methods: {
     toDoDelete() {
       this.toDo.splice(this.description, 1);
     },
+
     middleLine(index) {
-      if (this.toDo[index].check == false) {
-        this.toDo[index].check == true;
-      } else {
-     this.toDo[index].check == false;
-      }
-      console.log(this.toDo[index].check);
+      //   if (this.toDo[index].check = false) {
+      //     this.toDo[index].check = true;
+      //   } else {
+      //     this.toDo[index].check = false;
+      //   }
+      this.toDo[index].check = true;
+    },
+
+    addTask() {
+      this.toDo.push({
+        description: this.text,
+        check: false,
+      });
     },
   },
+
 });

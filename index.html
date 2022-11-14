@@ -24,8 +24,8 @@
   <body>
     <div id="root">
       <div class="mt-3 d-flex align-items-center justify-content-center">
-        <input type="text" placeholder="write something" />
-        <button class="btn btn-primary ms-3">ADD</button>
+        <input v-model="text" placeholder="write something" v-on:keyup.enter="addTask"/>
+        <button class="btn btn-primary ms-3"  @click="addTask">ADD</button>
       </div>
 
       <div class="w-50 m-auto mt-5">
@@ -33,10 +33,10 @@
           <li
             v-for="(description, index) in toDo"
             class="list-group-item d-flex justify-content-between"
+            @click="middleLine(index)"
             :class="(toDo[index].check == true) ? 'text-decoration-line-through' : '' "
           >
             {{toDo[index].description}}<span>
-              <i class="fa-solid fa-check" @click="middleLine(index)"></i>
               <i @click="toDoDelete(index)" class="fa-solid fa-x"></i
             ></span>
           </li>
