@@ -15,8 +15,8 @@ var app = new Vue({
   },
 
   methods: {
-    toDoDelete() {
-      this.toDo.splice(this.description, 1);
+    toDoDelete(index) {
+      this.toDo.splice(index, 1);
     },
 
     middleLine(index) {
