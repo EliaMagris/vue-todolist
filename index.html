@@ -32,8 +32,12 @@
         <ul class="list-group list-group-flush" v-if="toDo.length > 0">
           <li
             v-for="(description, index) in toDo"
-            class="list-group-item d-flex justify-content-between">{{toDo[index].description}}<span @click="toDoDelete(index)"
-              ><i class="fa-solid fa-x"></i
+            class="list-group-item d-flex justify-content-between"
+            :class="(toDo[index].check == true) ? 'text-decoration-line-through' : '' "
+          >
+            {{toDo[index].description}}<span>
+              <i class="fa-solid fa-check" @click="middleLine(index)"></i>
+              <i @click="toDoDelete(index)" class="fa-solid fa-x"></i
             ></span>
           </li>
         </ul>
