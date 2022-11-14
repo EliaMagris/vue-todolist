@@ -20,11 +20,11 @@ var app = new Vue({
     },
 
     middleLine(index) {
-        if (this.toDo[index].check == false) {
-          this.toDo[index].check = true;
-        } else {
-          this.toDo[index].check = false;
-        }
+      if (this.toDo[index].check == false) {
+        this.toDo[index].check = true;
+      } else {
+        this.toDo[index].check = false;
+      }
       //this.toDo[index].check = true;
     },
 
@@ -35,5 +35,4 @@ var app = new Vue({
       });
     },
   },
-
 });

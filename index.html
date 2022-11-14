@@ -37,9 +37,13 @@
           <li
             v-for="(description, index) in toDo"
             class="list-group-item d-flex justify-content-between"
-            
           >
-            <span  :class="(toDo[index].check == true) ? 'text-decoration-line-through' : '' "@click="middleLine(index)"> {{toDo[index].description}}</span>
+            <span
+              :class="(toDo[index].check == true) ? 'text-decoration-line-through' : '' "
+              @click="middleLine(index)"
+            >
+              {{toDo[index].description}}</span
+            >
             <i @click="toDoDelete(index)" class="fa-solid fa-x"></i>
           </li>
         </ul>
